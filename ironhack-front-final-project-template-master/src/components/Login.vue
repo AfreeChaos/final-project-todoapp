@@ -25,7 +25,7 @@
 
 <template>
     <section>
-        <img src="../assets/lista-de-quehaceres.png" alt="" style="height:162px; width:162px;">
+        <img src="../assets/lista-de-quehaceres.png" alt="" style="height:162px; width:162px; position: absolute; display: inline-block; top: 147px;">
         <div class="container1">
             <form @submit.prevent="handleLogin">
                 <div>
@@ -62,12 +62,13 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 228px;
 }
 .container1{
     width: 534px;
     height: 568px;
     border-radius: 32px;
-    background-color: antiquewhite;
+    background-color: #faecda;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,7 +99,7 @@ section {
     height: 56px;
     color: white;
     font-weight: 500;
-    background-color: hsl(0, 99%, 67%);
+    background-color: #F34B50;
     border-radius: 16px;
     margin: 20px 0 32px 0;
 }
