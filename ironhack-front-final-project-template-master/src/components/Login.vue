@@ -4,14 +4,16 @@
 
   const loading = ref(false);
   const email = ref('');
+  const password = ref('')
 
   const handleLogin = async () => {
     try {
       loading.value = true
-      const { error } = await supabase.auth.signInWithOtp({
+      await supabase.auth.signInWithOtp({
         email: email.value,
+        password: password.value,
       })
-      if (error) throw error
+    //   if (error) throw error
       alert('Check your email for the login link!')
     } catch (error) {
       if (error instanceof Error) {
@@ -36,7 +38,7 @@
                     </div>      
                     <div class="user">
                         <p style="padding-bottom: 8px">Password</p>
-                        <input class="inputField" type="password" placeholder="Type your password..." v-model="email" />
+                        <input class="inputField" type="password" placeholder="Type your password..." v-model="password" />
                     </div>
                     <div class="button">
                         <input
@@ -48,7 +50,7 @@
                     </div>
                     <div class="no-account">
                         <p style="padding-right: 32px">Don’t have an account yet?</p>
-                        <p>Sign up</p>
+                        <router-link to="/signup" class="link">Sign up</router-link>
                     </div>
                 </div>
             </form>
@@ -106,5 +108,8 @@ section {
 .no-account {
     display: flex;
     flex-direction: row;
+}
+.link {
+    color: #4A749B;
 }
 </style>

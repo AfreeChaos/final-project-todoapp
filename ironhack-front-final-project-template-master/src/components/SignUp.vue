@@ -1,18 +1,19 @@
 <script setup>
   import { ref } from 'vue'
-  import userStore from '../store/user'
+  import { useUserStore } from '../store/user'
 
   const loading = ref(false)
   const email = ref('')
+  const password = ref('')
 
   const handleSignUp = async () => {
     try {
       loading.value = true
-      const { error } = await userStore.SignUp (
+        await useUserStore().signUp (
         email.value,
         password.value
       )
-      if (error) throw error
+    //   if (error) throw error
       alert('Check your email for the login link!')
     } catch (error) {
       if (error instanceof Error) {
@@ -26,7 +27,7 @@
 
 <template>
     <section>
-        <img src="../assets/lista-de-quehaceres.png" alt="" style="height:162px; width:162px;">
+        <img src="../assets/lista-de-quehaceres.png" alt="" style="height:162px; width:162px; position: absolute; display: block; top: 147px;">
         <div class="container1">
             <form @submit.prevent="handleSignUp">
                 <div>
@@ -37,7 +38,7 @@
                     </div>      
                     <div class="user">
                         <p style="padding-bottom: 8px">Password</p>
-                        <input class="inputField" type="password" placeholder="Type your password..." v-model="email" />
+                        <input class="inputField" type="password" placeholder="Type your password..." v-model="password" />
                     </div>
                     <div class="button">
                         <input
@@ -48,8 +49,8 @@
                         />
                     </div>
                     <div class="no-account">
-                        <p style="padding-right: 32px">Don’t have an account yet?</p>
-                        <a href="../components/SignUp.vue">Sign up</a>
+                        <p style="padding-right: 32px">Do you already have an account?</p>
+                        <router-link to="/login" class="link">Log in</router-link>
                     </div>
                 </div>
             </form>
@@ -63,6 +64,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 228px;
 }
 .container1{
     width: 534px;
@@ -106,5 +108,8 @@ section {
 .no-account {
     display: flex;
     flex-direction: row;
+}
+.link {
+    color: #4A749B;
 }
 </style>

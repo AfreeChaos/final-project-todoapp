@@ -17,12 +17,9 @@ const { user } = storeToRefs(userStore);
 onMounted(async () => {
   try {
     await userStore.fetchUser(); // here we call fetch user
-    if (!user.value) {
+    if (!user.value && (window.location.pathname !== '/signup')) {
       // redirect them to logout if the user is not there
-      router.push({ path: "/auth" });
-    } else {
-      // continue to dashboard
-      router.push({ path: "/" });
+      router.push({ path: "/login" });
     }
   } catch (e) {
     console.log(e);
