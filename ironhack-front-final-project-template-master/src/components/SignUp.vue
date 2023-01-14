@@ -44,7 +44,7 @@
                         <input
                         type="submit"
                         class="login-button"
-                        :value="loading ? 'Loading' : 'LOG IN'"
+                        :value="loading ? 'Loading' : 'SIGN UP'"
                         :disabled="loading"
                         />
                     </div>

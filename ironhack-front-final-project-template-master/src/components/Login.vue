@@ -1,6 +1,7 @@
 <script setup>
   import { ref } from 'vue'
   import { supabase } from '../api/supabase'
+  import router from '../router';
 
   const loading = ref(false);
   const email = ref('');
@@ -9,12 +10,11 @@
   const handleLogin = async () => {
     try {
       loading.value = true
-      await supabase.auth.signInWithOtp({
+      await supabase.auth.signIn({
         email: email.value,
         password: password.value,
       })
-    //   if (error) throw error
-      alert('Check your email for the login link!')
+      router.push({path: '/home'})
     } catch (error) {
       if (error instanceof Error) {
         alert(error.message)
