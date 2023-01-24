@@ -11,7 +11,7 @@
                     <router-link to="/home" class="link">SETTINGS</router-link>
                     <hr class="link">
                     <p class="link">MY BOARDS</p>
-                    <router-link to="/home" class="link">To-Do Project | Tasks</router-link>
+                    <router-link to="/tasks" class="link">To-Do Project | Tasks</router-link>
                 </ul>
             </nav>
             <div>
@@ -32,6 +32,14 @@
                 </div>
                 <div>
                     <h2 class="title2">My boards</h2>
+                    <div class="boards">
+                        <img src="../assets/wallpaper.jpeg" alt="">
+                        <div class="title3">
+                            <router-link to="/home" class="link">To-Do Project | Tasks</router-link>
+                            <img src="../assets/gold-star.png" alt="" style="width: 16px; height: 16px;">
+                        </div>
+                        <p>Description</p>
+                    </div>
                     <div class="boards">
                         <img src="../assets/wallpaper.jpeg" alt="">
                         <div class="title3">
