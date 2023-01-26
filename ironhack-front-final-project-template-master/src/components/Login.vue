@@ -27,7 +27,7 @@
 
 <template>
     <section>
-        <img src="../assets/lista-de-quehaceres.png" alt="" style="height:162px; width:162px; position: absolute; display: inline-block; top: 147px;">
+        <img src="../assets/to-do.png" alt="" style="height:280px; width:280px; position: absolute; display: inline-block; top: 90px;">
         <div class="container1">
             <form @submit.prevent="handleLogin">
                 <div>
@@ -44,7 +44,7 @@
                         <input
                         type="submit"
                         class="login-button"
-                        :value="loading ? 'Loading' : 'LOG IN'"
+                        :value="loading ? 'Loading...' : 'LOG IN'"
                         :disabled="loading"
                         />
                     </div>
@@ -58,8 +58,11 @@
     </section>
 </template>
 
+
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 section {
+    font-family: 'Quicksand';
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,10 +70,10 @@ section {
     margin-top: 228px;
 }
 .container1{
-    width: 534px;
+    width: 502px;
     height: 568px;
+    border: 2px solid black;
     border-radius: 32px;
-    background-color: #faecda;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,6 +81,7 @@ section {
 }
 .description {
     font-size: 24px;
+    text-align: center;
 }
 .user {
     font-size: 16px;
@@ -86,7 +90,8 @@ section {
     padding: 12px 0 12px 0;
 }
 .inputField {
-    height: 32px;
+    height: 40px;
+    border: black 1px solid;
     font-size: 16px;
     font-weight: 200;
     border-radius: 8px;
@@ -99,10 +104,11 @@ section {
 .login-button {
     width: 162px;
     height: 56px;
-    color: white;
+    font-size: 20px;
     font-weight: 500;
-    background-color: #F34B50;
+    background-color: #FA604A;
     border-radius: 16px;
+    border: 2px solid black;
     margin: 20px 0 32px 0;
 }
 .no-account {
@@ -110,6 +116,7 @@ section {
     flex-direction: row;
 }
 .link {
-    color: #4A749B;
+    font-weight: 600;
+    text-decoration:underline;
 }
 </style>

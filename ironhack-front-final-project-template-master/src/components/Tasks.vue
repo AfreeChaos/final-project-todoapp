@@ -3,8 +3,8 @@
         <div>
             <div class="section1">
                 <nav class="menu">
-                    <img src="../assets/lista-de-quehaceres.png" alt=""
-                        style="width: 124px; margin-top: 80px; margin-bottom: 80px;">
+                    <img src="../assets/to-do.png" alt=""
+                        style="width: 180px; margin-top: 40px; margin-bottom: 40px;">
                     <ul class="nav">
                         <router-link to="/home" class="link">HOME</router-link>
                         <router-link to="/home" class="link">MEMBERS</router-link>
@@ -31,7 +31,7 @@
                     <div>
                         <h1 class="title1">My Boards</h1>
                         <h2 class="title2">To-Do Project | Tasks</h2>
-                        <hr style="background-color: #DDDCE0; height: 1px; margin: 16px;">
+                        <hr style="background-color: #FCE0D5; height: 1px; margin: 16px; border: none;">
                     </div>
                     <div class="search-bar">
                         <form @submit.prevent="submitTask" class="form-inline">
@@ -44,7 +44,7 @@
                                 style="width: 40px; border-radius: 50%; margin-left: 16px;">
                         </div>
                     </div>
-                    <p v-for="task in taskStore.tasks" :key="task.id">
+                    <p class="tasks" v-for="task in taskStore.tasks" :key="task.id">
                         {{ task.title }}
                     </p>
                 </div>
@@ -75,16 +75,18 @@ const submitTask = () => {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 .section1 {
     display: flex;
     flex-direction: row;
+    font-family: 'Quicksand';
 }
 
 .menu {
-    width: 280px;
+    width: 260px;
     height: 100vh;
-    background-color: #FAECDA;
-    border-radius: 0 32px 32px 0;
+    background-color: #fcf3ef;
+    border-right: 1px solid #FCE0D5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,12 +100,13 @@ const submitTask = () => {
 }
 
 hr {
-    height: 2px;
-    background-color: black;
+    height: 1px;
+    background-color: #FCE0D5;
+    border: none;
 }
 
 .linkselect {
-    color: #4A749B;
+    color: #FA604A;
     margin-bottom: 24px;
     font-weight: 500;
 }
@@ -133,10 +136,10 @@ hr {
 .search-btn {
     width: 100px;
     height: 40px;
-    border: 1px #4A749B solid;
+    border: 1.5px #FA604A solid;
     border-radius: 8px;
-    color: #4A749B;
-    font-weight: 300;
+    color: #FA604A;
+    font-weight: 500;
 }
 
 .title1 {
@@ -149,5 +152,8 @@ hr {
     margin: 24px;
     font-size: 20px;
     font-weight: 600;
+}
+.tasks {
+    margin: 24px;
 }
 </style>
